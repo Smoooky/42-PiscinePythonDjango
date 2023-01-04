@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contact Form</title>
+    <script src="popup.js"></script>
+</head>
+<body>
+    <form>
+		<table>
+			<tr><td>Firstname: </td><td><input type="text" id="firstname"  ></td></tr>
+			<tr><td>Name: </td><td><input type="text" id="name" ></td></tr>
+			<tr><td>Age: </td><td><input type="number" id="age"></td></tr>
+			<tr><td>Phone: </td><td><input type="tel" id="phone"></td></tr>
+			<tr><td>Email: </td><td><input type="email" id="email"></td></tr>
+			<tr><td>Student at 42 ?
+			<input type="checkbox" id="student" value="yes" checked></td></tr>
+			<tr><td><input type="radio" name="gender" id="gender_male" value="male" checked> Male</td></tr>
+			<tr><td><input type="radio" name="gender" id="gender_female" value="female"> Female</td></tr>
+			<tr><td><input type="radio" name="gender" id="gender_other" value="other"> Other</td></tr>
+			<tr><td><input type="submit" value="Submit!" onclick="displayFormContents();"></td></tr>
+		</table>
+	</form>
+</body>
+</html>
