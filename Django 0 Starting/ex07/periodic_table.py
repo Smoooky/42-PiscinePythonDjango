@@ -48,28 +48,31 @@ def main():
 """
 
     body = "<tr>"
-    f = open("periodic_table.txt", "r")
-    periodic_table = [(parse_line(line)) for line in f.readlines()]
-    f.close()
-    position = 0
-    for dic in periodic_table:
-        if position > int(dic["position"]):
-            body += "    </tr>\n    <tr>"
-            position = 0
-        for _ in range(position, int(dic["position"]) - 1):
-            body += "      <td></td>\n"
-        position = int(dic["position"])
-        body += TEMPLATE.format(
-            name=dic["name"],
-            number=dic["number"],
-            small=dic["small"],
-            molar=dic["molar"],
-            electron=dic["electron"],
-        )
-    body += "    </tr>\n"
-    f = open("periodic_table.html", "w")
-    f.write(HTML.format(body=body))
-    f.close()
+    try:
+        f = open("periodic_table.txt", "r")
+        periodic_table = [(parse_line(line)) for line in f.readlines()]
+        f.close()
+        position = 0
+        for dic in periodic_table:
+            if position > int(dic["position"]):
+                body += "    </tr>\n    <tr>"
+                position = 0
+            for _ in range(position, int(dic["position"]) - 1):
+                body += "      <td></td>\n"
+            position = int(dic["position"])
+            body += TEMPLATE.format(
+                name=dic["name"],
+                number=dic["number"],
+                small=dic["small"],
+                molar=dic["molar"],
+                electron=dic["electron"],
+            )
+        body += "    </tr>\n"
+        f = open("periodic_table.html", "w")
+        f.write(HTML.format(body=body))
+        f.close()
+    except FileNotFoundError:
+        print('file periodic_table.txt needed')
 
 
 if __name__ == '__main__':
