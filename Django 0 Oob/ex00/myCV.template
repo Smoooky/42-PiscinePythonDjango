@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Resume</title>
+  </head>
+  <body>
+    <h1>Resume</h1>
+    <table>
+      <tr>
+        <th>Name</th>
+        <td>{name}</td>
+      </tr>
+      <tr>
+        <th>Surname</th>
+        <td>{surname}</td>
+      </tr>
+      <tr>
+        <th>Age</th>
+        <td>{age}</td>
+      </tr>
+      <tr>
+        <th>Profession</th>
+        <td>{profession}</td>
+      </tr>
+    </table>
+  </body>
+</html>
